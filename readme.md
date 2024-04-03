@@ -40,8 +40,11 @@ frame = post_process_multi(frame, output[0], score_threshold=0.2)
 
 ## License
 The code in this repository is licensed under the MIT License. Feel free to use and modify the code as needed.
+
 If you use this code, please cite:
 
 XiNet-pose: Extremely lightweight pose detection for microcontrollers
+
 Alberto Ancilotto, Francesco Paissan, Elisabetta Farella
+
 DATE: Design, Automation, and Test in Europe, 2024
