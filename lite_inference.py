@@ -7,6 +7,10 @@ import yolo_nms
 
 cv2.namedWindow('out')
 session = ort.InferenceSession('XiNet-s-pose-224.onnx', providers=[('TensorrtExecutionProvider', {'trt_engine_cache_enable': True, 'trt_engine_cache_path': '/home/nvidia/TRT_cache/engine_cache', "trt_fp16_enable": True, 'device_id': 0, }), 'CUDAExecutionProvider']) # providers=['CPUExecutionProvider'])#,
+#session = ort.InferenceSession('XiNet-L-pose.onnx', providers=[('TensorrtExecutionProvider', {'trt_engine_cache_enable': True, 'trt_engine_cache_path': '/home/nvidia/TRT_cache/engine_cache', "trt_fp16_enable": True, 'device_id': 0, }), 'CUDAExecutionProvider']) # providers=['CPUExecutionProvider'])#,
+
+IMG_SZ=(224,224) #XiNet-s-pose-224.onnx
+#IMG_SZ=(224,160) #XiNet-L-pose.onnx
 
 input_name = session.get_inputs()[0].name
 
@@ -14,7 +18,6 @@ def model_inference(input=None):
     output = session.run([], {input_name: input})
     return output[0]
 
-IMG_SZ=(224,224)
 
 sk = [15,13, 13,11, 16,14, 14,12, 11,12, 
             5,11, 6,12, 5,6, 5,7, 6,8, 7,9, 8,10, 
