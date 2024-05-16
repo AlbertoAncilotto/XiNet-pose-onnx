@@ -9,16 +9,22 @@ The repository contains a Python script that can be used to load an ONNX model f
 
 ## Dependencies
 Python 3.x
-
+```
 numpy
 python-opencv 
 onnxruntime
 matplotlib
+```
 
 ## Usage
-Clone the repository: git clone https://github.com/AlbertoAncilotto/YoloV8_pose_onnx
+```
+git clone https://github.com/AlbertoAncilotto/YoloV8_pose_onnx
+```
 
-Install the required dependencies: pip install numpy opencv-python onnxruntime matplotlib
+Install the required dependencies: 
+```
+pip install numpy opencv-python onnxruntime matplotlib
+```
 
 The code is setup for using the default cv2 camera for inference. For use with an NVidia Jetson, switch commenting on these two lines
 ```
@@ -34,3 +40,11 @@ frame = post_process_multi(frame, output[0], score_threshold=0.2)
 
 ## License
 The code in this repository is licensed under the MIT License. Feel free to use and modify the code as needed.
+
+If you use this code, please cite:
+
+XiNet-pose: Extremely lightweight pose detection for microcontrollers
+
+Alberto Ancilotto, Francesco Paissan, Elisabetta Farella
+
+DATE: Design, Automation, and Test in Europe, 2024
